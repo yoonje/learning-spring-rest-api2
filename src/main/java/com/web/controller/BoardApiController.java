@@ -39,6 +39,7 @@ public class BoardApiController {
 		this.boardRepository = boardRepository;
 	}
 
+	// HTTP GET이고 JSON 형태 사용
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<?> getBoards(@PageableDefault Pageable pageable){
 		Page<Board> boards = boardRepository.findAll(pageable);
@@ -49,6 +50,7 @@ public class BoardApiController {
 		return ResponseEntity.ok(resources);
 	}
 
+	// HTTP POST이고 Board를 Body 정보를 Body로 받음
 	@PostMapping
 	public ResponseEntity<?> postBoard(@RequestBody Board board) {
 		//valid 체크
@@ -57,6 +59,7 @@ public class BoardApiController {
 		return new ResponseEntity<>("{}", HttpStatus.CREATED);
 	}
 
+	// HTTP PUT으로 idx는 url path로 Board 정보는 Body로 받음
 	@PutMapping("/{idx}")
 	public ResponseEntity<?> putBoard(@PathVariable("idx")Long idx, @RequestBody Board board) {
 		//valid 체크
@@ -65,7 +68,8 @@ public class BoardApiController {
 		boardRepository.save(persistBoard);
 		return new ResponseEntity<>("{}", HttpStatus.OK);
 	}
-
+	
+	// HTTP DELETE로 idx를 url path로 받음
 	@DeleteMapping("/{idx}")
 	public ResponseEntity<?> deleteBoard(@PathVariable("idx")Long idx) {
 		//valid 체크
