@@ -6,6 +6,9 @@
 - [gradle](https://gradle.org/)
 - [MySQL](https://www.mysql.com/)
 
+
+** MySQL 설치 및 application.yml에 맞게 설정해야함**
+
 ## Build
 ```
 $ ./gradlew build
@@ -16,3 +19,8 @@ $ ./gradlew build
 $ java -jar target/*.jar
 ```
 
+## 책과 다른 점
+- 시큐리티 설정을 제외하고 웹과 REST API 코드만 집중
+- Data REST를 사용하지 않고 MVC로 API 사용
+- CORS 설정을 하지 않음
+- 멀티 모듈로 개발하지 않고 단일 모듈 사용
