@@ -6,8 +6,7 @@
 - [gradle](https://gradle.org/)
 - [MySQL](https://www.mysql.com/)
 
-
-**MySQL 설치 및 application.yml에 맞게 설정해야함**
+**MySQL 설치 이후 실행하고 application.yml에 맞게 설정해야함**
 
 ## Build
 ```
